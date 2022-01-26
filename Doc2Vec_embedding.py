@@ -4,14 +4,16 @@ import pickle
 
 start_time = time.time()
 
+PREPROCESS_ABSTRACTS = True
+
 # Read/create the preprocessed abstract of each paper
-try:
+if not PREPROCESS_ABSTRACTS:
     print('Loading abstracts')
     a_file = open("data/abstract_preprocessed.pkl", "rb")
     abstracts = pickle.load(a_file)
     a_file.close()
     print('Abstract already preprocessed')
-except:
+else:
     # import nltk
     # nltk.download('stopwords')
     # nltk.download('punkt')
@@ -19,6 +21,7 @@ except:
     from nltk.corpus import stopwords
     from nltk.stem.porter import PorterStemmer
     from tqdm import tqdm 
+    import string
     
     print('Preprocessing abstracts')
     stop_words = stopwords.words('english')
@@ -28,7 +31,7 @@ except:
         for line in tqdm(f):
             node, abstract = line.split('|--|')
             abstract = abstract.lower()
-            # abstract = "".join([char for char in abstract if char not in string.punctuation])
+            abstract = "".join([char for char in abstract if char not in string.punctuation])
             abstract = word_tokenize(abstract)
             abstract = [word for word in abstract if word not in stop_words]
             # abstract = [porter.stem(word) for word in abstract]
