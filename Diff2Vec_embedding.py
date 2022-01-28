@@ -2,9 +2,26 @@ from karateclub import Diff2Vec
 import networkx as nx
 import numpy as np
 import time
-from Node2Vec_embedding import return_embeddings
 
 start_time = time.time()
+
+def return_embeddings(model, parameters):
+    """Creates embeddings for a given model
+
+    Args:
+        G: nx Graph.
+        model: Graph embedding model from karateclub library.
+        parameters (dict): Dictionary containing model parameters.
+
+    Returns:
+        np.ndarray: embeddings.
+    """
+    
+    emb = model(**parameters)
+    G = nx.read_edgelist('data/edgelist.txt', delimiter=',', create_using=nx.Graph(), nodetype=int)
+    emb.fit(G)
+    
+    return emb.get_embedding()
 
 #--------------------------------------------------------------------------------------#
 #----------------------------# MODEL PARAMETERS TO CHANGE #----------------------------#
