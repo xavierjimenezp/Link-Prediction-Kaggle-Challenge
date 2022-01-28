@@ -5,7 +5,7 @@ import time
 
 start_time = time.time()
 
-def return_embeddings(G, model, parameters):
+def return_embeddings(model, parameters):
     """Creates embeddings for a given model
 
     Args:
@@ -18,24 +18,20 @@ def return_embeddings(G, model, parameters):
     """
     
     emb = model(**parameters)
+    G = nx.read_edgelist('data/edgelist.txt', delimiter=',', create_using=nx.Graph(), nodetype=int)
     emb.fit(G)
     
     return emb.get_embedding()
 
-# Create a graph
-G = nx.read_edgelist('data/edgelist.txt', delimiter=',', create_using=nx.Graph(), nodetype=int)
-nodes = list(G.nodes())
-n = G.number_of_nodes()
-m = G.number_of_edges()
-print('Number of nodes:', n)
-print('Number of edges:', m)
 
 #--------------------------------------------------------------------------------------#
 #----------------------------# MODEL PARAMETERS TO CHANGE #----------------------------#
-parameters = {'walk_number': 10, 'walk_length': 15, 'dimensions': 64, 'window_size': 5, 'workers': 7}
+parameters = {'walk_number': 10, 'walk_length': 80, 'dimensions': 64, 'window_size': 5, 'workers': 3}
 #--------------------------------------------------------------------------------------#
+print('Learning embedding with parameters')
+print(parameters)
 
-n2v_embeddings = return_embeddings(G, Node2Vec, parameters)
+n2v_embeddings = return_embeddings(Node2Vec, parameters)
 np.save('data/embedding_n2v_wn{:d}_wl{:d}_d{:d}_ws{:d}'.format(parameters['walk_number'], parameters['walk_length'],
                                                                parameters['dimensions'], parameters['window_size']), 
         n2v_embeddings)
