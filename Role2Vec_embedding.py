@@ -8,7 +8,7 @@ start_time = time.time()
 
 #--------------------------------------------------------------------------------------#
 #----------------------------# MODEL PARAMETERS TO CHANGE #----------------------------#
-parameters = {'walk_number': 20, 'walk_length': 80, 'dimensions': 128, 'window_size': 5, 
+parameters = {'walk_number': 10, 'walk_length': 15, 'dimensions': 128, 'window_size': 5, 
               'epochs': 1, 'workers': 7}
 #--------------------------------------------------------------------------------------#
 print('Learning embedding with parameters')
