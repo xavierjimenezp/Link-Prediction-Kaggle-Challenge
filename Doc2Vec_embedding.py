@@ -4,7 +4,7 @@ import pickle
 
 start_time = time.time()
 
-PREPROCESS_ABSTRACTS = True
+PREPROCESS_ABSTRACTS = False
 
 # Read/create the preprocessed abstract of each paper
 if not PREPROCESS_ABSTRACTS:
@@ -34,11 +34,8 @@ else:
             abstract = "".join([char for char in abstract if char not in string.punctuation])
             abstract = word_tokenize(abstract)
             abstract = [word for word in abstract if word not in stop_words]
-            # abstract = [porter.stem(word) for word in abstract]
+            abstract = [porter.stem(word) for word in abstract]
             abstracts[int(node)] = abstract
-    a_file = open("data/abstract_preprocessed.pkl", "wb")
-    pickle.dump(abstracts, a_file)
-    a_file.close()
     print('Preprocessing Done')
     
 
