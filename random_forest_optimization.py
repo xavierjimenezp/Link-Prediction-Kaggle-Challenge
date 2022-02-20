@@ -23,6 +23,7 @@ def objective(search_space):
     y_pred = model.predict_proba(X_val)
     y_pred = y_pred[:,1]
     return {'loss': log_loss(y_val, y_pred), 'status': STATUS_OK}
+  
 # new search space
 search_space={'n_estimators':hp.randint('n_estimators',200,1000),
               
@@ -35,6 +36,7 @@ search_space={'n_estimators':hp.randint('n_estimators',200,1000),
                 
            'max_features':hp.choice('max_features',['sqrt', 'log2'])
              }
+# {'criterion': 0, 'max_depth': 180, 'max_features': 1, 'min_samples_leaf': 3, 'min_samples_split': 0.0002042418947923803, 'n_estimators': 631}
 
 # implement Hyperopt
 algorithm=tpe.suggest
