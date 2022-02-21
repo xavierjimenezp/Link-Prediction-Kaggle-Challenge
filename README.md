@@ -9,7 +9,7 @@ The pipeline used to solve this problem is identical to that used to solve any c
 This model was created for the following [Kaggle competition](https://www.kaggle.com/c/altegrad-2021/leaderboard) for the MVA ALTEGRAD course 2021. It scored 0.0871 on the public leaderboard and is ranked TOP 1.
 
 ## Team
-The team "OverTen" is composed by Xavier Jiménez, Jean Quentin and Sacha Revol
+The team "OverTen" is composed of Xavier Jiménez, Jean Quentin and Sacha Revol
 
 # Submission
 Best submission and results on the validation dataset can be reproduced using the `best_submission.ipynb` file.
