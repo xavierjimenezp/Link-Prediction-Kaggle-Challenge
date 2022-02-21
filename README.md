@@ -24,7 +24,7 @@ File `ALTEGRAD_project_v2.ipynb` handles the different steps for matrix creation
 Files `weighted_co_authors_graph.py`, `utils.py` and `citation_graph.py` handle authors Graph creation
 
 # Embeddings
-Files `*_embedding.py` handle abstract and graph node embeddings.
+Files `*_embedding.py/ipynb` handle abstract and graph node embeddings.
 
 # Hyperparameter Optimization
 Files `*_optimization.ipynb` find best hyperparameters for a given model using HyperOpt package.
