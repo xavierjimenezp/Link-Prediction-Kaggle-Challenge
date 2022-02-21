@@ -32,10 +32,10 @@ parameters = {'walk_number': 10, 'walk_length': 80, 'dimensions': 64, 'window_si
 print('Learning embedding with parameters')
 print(parameters)
 
-G = nx.read_weighted_edgelist('data/citation_graph_train.txt', delimiter=',', create_using=nx.Graph(), nodetype=int)
+G = nx.read_weighted_edgelist('data/unique_citation_graph_complete.txt', delimiter=',', create_using=nx.Graph(), nodetype=int)
 
 embeddings = return_embeddings(G, Walklets, parameters)
-np.save('data/embedding_Walklets_citation_graph_train_wn{:d}_wl{:d}_d{:d}_ws{:d}'.format(parameters['walk_number'], parameters['walk_length'],
+np.save('data/embedding_Walklets_unique_citation_graph_complete_wn{:d}_wl{:d}_d{:d}_ws{:d}'.format(parameters['walk_number'], parameters['walk_length'],
                                                                parameters['dimensions'], parameters['window_size']), 
         embeddings)
 
