@@ -18,8 +18,9 @@ Best submission and results on the validation dataset can be reproduced using th
 # Preprocessing
 File `Preprocessing.ipynb` handles preprocessing for abstracts, authors and graph data.
 
-# Feature matrix creation
-File `ALTEGRAD_project_v2.ipynb` handles the different steps for matrix creation and evaluation
+# Feature matrix creation & evaluation
+File `ALTEGRAD_project_v2.ipynb` handles the different steps for matrix creation and evaluation (i.e. LR, RF, XGBoost, LGBM, CatBoost)
+File `nn-classifier.ipynb` implements the MLP classifier.
 
 # Author Graphs
 Files `weighted_co_authors_graph.py`, `utils.py` and `citation_graph.py` handle authors Graph creation
