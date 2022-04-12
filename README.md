@@ -7,7 +7,7 @@ The challenge of predicting the presence of a link between two nodes in a networ
 
 The pipeline used to solve this problem is identical to that used to solve any classification problem; the goal is to learn the parameters of a classifier using edge information, and then use the classifier to predict whether two nodes are related by an edge or not. Our goal in this project is to transform the different types of data, i.e. abstracts, authors and citation graph to create a feature matrix that we can feed to the classifier that will tackle the link prediction problem. Our model performance will be evaluated with the log loss metric.
 
-This model was created for the following [Kaggle competition](https://www.kaggle.com/c/altegrad-2021/leaderboard) for the 2021/2022 MVA-ALTEGRAD course. It scored **0.08071** on the public leaderboard and is ranked **TOP 1**.
+This model was created for the following [Kaggle competition](https://www.kaggle.com/c/altegrad-2021/leaderboard) for the 2021/2022 MVA-ALTEGRAD course. It is ranked **TOP 1** both on the public and private learderboard.
 
 ## Team
 The team **OverTen** is composed of **Xavier Jiménez**, **Jean Quentin** and **Sacha Revol**.
