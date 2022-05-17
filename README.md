@@ -10,7 +10,7 @@ The pipeline used to solve this problem is identical to that used to solve any c
 This model was created for the following [Kaggle competition](https://www.kaggle.com/c/altegrad-2021/leaderboard) for the 2021/2022 Advanced learning for text and graph data course. It is ranked **TOP 1** both on the public and private learderboard.
 
 ## Team
-The team **OverTen** is composed of **Xavier Jiménez**, **Jean Quentin** and **Sacha Revol**.
+The team **OverTen** is composed by **Xavier Jiménez**, **Jean Quentin** and **Sacha Revol**.
 
 # Submission
 Best submission and results on the validation dataset can be reproduced using the `best_submission.ipynb` file.
